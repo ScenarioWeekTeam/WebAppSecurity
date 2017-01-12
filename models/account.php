@@ -14,7 +14,7 @@ class Account extends Model {
     function save() {
         if ($this->id) {
             if (!$this->username || !$this->password) {
-
+                $this->search();
             }
             $sql = "UPDATE " . $this->_table . " SET username=" . $this->username . " password=" . $this->password . " WHERE id=" . $this->id;
             return $this->query($sql);
@@ -42,8 +42,16 @@ class Account extends Model {
 
     function search() {
         if ($this->id) {
-            if (!$this->username || !$this->password) {
+            if (!$this->username && !$this->password) {
                 $sql = "SELECT username, password FROM " . $this->_table . " WHERE id=" . $this->id;
+                $result = $this->query($sql);
+            }
+            else if (!$this->username) {
+                $sql = "SELECT username FROM " . $this->_table . " WHERE id=" . $this->id;
+                $result = $this->query($sql);
+            }
+            else if (!$this->password) {
+                $sql = "SELECT password FROM " . $this->_table . " WHERE id=" . $this->id;
                 $result = $this->query($sql);
             }
             else {
