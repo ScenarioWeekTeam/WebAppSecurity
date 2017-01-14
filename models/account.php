@@ -1,4 +1,7 @@
 <?php
+
+require '../library/model.php';
+
 class Account extends Model {
     function __construct($username, $password, $id) {
         parent::__construct();

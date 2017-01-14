@@ -1,4 +1,7 @@
 <?php
+
+require 'database.php';
+
 class Model extends Database {
     protected $_model;
 

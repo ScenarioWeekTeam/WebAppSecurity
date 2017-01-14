@@ -1,5 +1,7 @@
 <?php
 
+require '../models/account.php';
+
 class AccountsController {
     function __construct() {
         session_start();
@@ -23,16 +25,5 @@ class AccountsController {
     function logout() {
         session_unset();
         session_destroy();
-    }
-
-    function register($username, $password) {
-        $account = new Account($username, $password, NULL);
-        if ($account->save === TRUE) {
-            $this->login($username, $password);
-            return;
-        }
-        else {
-            return -1;
-        }
     }
 }
