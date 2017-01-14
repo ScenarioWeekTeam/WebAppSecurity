@@ -1,6 +1,6 @@
 <?php
 
-require '../models/comment.php';
+require $root . 'models/comment.php';
 
 class CommentsController {
     function __construct() {
@@ -12,7 +12,7 @@ class CommentsController {
     }
 
     function addComment($name, $email, $phonenumber, $course, $comment) {
-        $comment = new Comment($name, $email, $phonenumber, $course, $comment);
+        $comment = new Comment($name, $email, $phonenumber, $course, $comment, NULL);
         return $comment->save();
     }
 

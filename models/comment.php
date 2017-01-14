@@ -1,6 +1,6 @@
 <?php
 
-require 'library/model.php';
+require $root . 'library/model.php';
 
 class Comment extends Model {
     function __construct($name, $email, $phonenumber, $course, $comment, $id) {
@@ -16,7 +16,10 @@ class Comment extends Model {
 
     function save() {
         if ($this->name && $this->email && $this->phonenumber && $this->course && $this->comment) {
-            $sql = "INSERT INTO " . $this->_table . ' (name, email, phonenumber, course, comment) VALUES ("' . $this->name . "', '" .  $this->email . "', '" . $this->phonenumber . "', '" . $this->course . "', '" . $this->comment . '")';
+            $sql = "INSERT INTO " . $this->_table . ' (name, email, phonenumber, course, comment) VALUES ("' . $this->name . '", "' .  $this->email . '", "' . $this->phonenumber . '", "' . $this->course . '", "' . $this->comment . '")';
+            if ($sql != TRUE) {
+                echo $_conn->error;
+            }
             return $this->query($sql);
         }
         else {
@@ -36,7 +39,7 @@ class Comment extends Model {
 
     function search() {
         $sql = "SELECT id, name, email, phonenumber, course, comment FROM " . $this->_table;
-        if ($this->id || $this->user || $this->comment) {
+        if ($this->id || $this->name || $this->email || $this->phonenumber || $this->course || $this->comment) {
             $sql = $sql . " WHERE ";
             if ($this->id) {
                 $sql = $sql . "id=" . $this->id . " ";

@@ -3,6 +3,7 @@
 
 <body>
 <?php
+$root = "";
 require 'models/comment.php';
 
 $comment = new Comment(NULL, NULL, NULL, NULL, NULL, NULL);

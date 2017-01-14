@@ -1,7 +1,7 @@
 <?php
 
-require 'database.php';
-require 'config/config.php';
+require $root . 'library/database.php';
+require $root . 'config/config.php';
 
 class Model extends Database {
     protected $_model;
