@@ -6,7 +6,6 @@ require '../controllers/commentsController.php';
 $controller = new CommentsController();
 
 $comment = $controller->addComment($_POST["name"], $_POST["email"], $_POST["phonenumber"], $_POST["course"], $_POST["comment"]);
-echo $comment->error;
 if ($comment === TRUE) {
     header("Location: /index.html?success=add");
 }

@@ -17,9 +17,6 @@ class Comment extends Model {
     function save() {
         if ($this->name && $this->email && $this->phonenumber && $this->course && $this->comment) {
             $sql = "INSERT INTO " . $this->_table . ' (name, email, phonenumber, course, comment) VALUES ("' . $this->name . '", "' .  $this->email . '", "' . $this->phonenumber . '", "' . $this->course . '", "' . $this->comment . '")';
-            if ($sql != TRUE) {
-                echo $_conn->error;
-            }
             return $this->query($sql);
         }
         else {
