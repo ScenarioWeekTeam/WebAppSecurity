@@ -7,7 +7,7 @@ require 'models/comment.php';
 
 $comment = new Comment(NULL, NULL, NULL, NULL, NULL, NULL);
 
-$result = $comment.search();
+$result = $comment->search();
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
@@ -17,6 +17,8 @@ if ($result->num_rows > 0) {
 else {
     echo "0 results";
 }
+
+?>
 
 </body>
 

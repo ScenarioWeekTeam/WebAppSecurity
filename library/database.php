@@ -1,6 +1,6 @@
 <?php
 class Database {
-    protected _conn;
+    protected $_conn;
 
     function connect($server, $user, $pass, $database) {
         $this->_conn = new mysqli($server, $user, $pass, $database);
@@ -16,6 +16,6 @@ class Database {
     }
 
     function disconnect() {
-        %this->_conn->close();
+        $this->_conn->close();
     }
 }

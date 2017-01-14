@@ -1,6 +1,6 @@
 <?php
 
-require '../library/model.php';
+require 'library/model.php';
 
 class Comment extends Model {
     function __construct($name, $email, $phonenumber, $course, $comment, $id) {
@@ -11,7 +11,7 @@ class Comment extends Model {
         $this->phonenumber = $phonenumber;
         $this->course = $course;
         $this->comment = $comment;
-        $this->id = $id
+        $this->id = $id;
     }
 
     function save() {
@@ -35,9 +35,9 @@ class Comment extends Model {
     }
 
     function search() {
-        $sql = "SELECT id, user, comment FROM " . $this->_table
+        $sql = "SELECT id, name, email, phonenumber, course, comment FROM " . $this->_table;
         if ($this->id || $this->user || $this->comment) {
-            $sql = $sql . " WHERE "
+            $sql = $sql . " WHERE ";
             if ($this->id) {
                 $sql = $sql . "id=" . $this->id . " ";
             }
