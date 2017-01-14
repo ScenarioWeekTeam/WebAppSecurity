@@ -6,7 +6,12 @@ $controller = new AccountController();
 $login = $controller->login($_POST["username"], $_POST["password"]);
 
 if ($login != -1) {
-    header("Location: /index.php?success=login");
+    if ($_GET['redirect']) {
+        header("Location: " . $_GET['redirect']);
+    }
+    else {
+        header("Location: /index.php?success=login");
+    }
 }
 else {
     header("Location: /login.php?error=true");
