@@ -11,7 +11,7 @@ class AccountsController {
 
     function login($username, $password) {
         $account = new Account($username, $password, NULL);
-        if ($account->search() != -1) {
+        if ($account->find() != -1) {
             $_SESSION['user'] = $account->getId();
             $_SESSION['username'] = $username;
         }

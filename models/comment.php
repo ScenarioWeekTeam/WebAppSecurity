@@ -11,7 +11,7 @@ class Account extends Model {
     function save() {
         if ($this->id) {
             if (!$this->user || !$this->comment) {
-                $this->search();
+                $this->find();
             }
             $sql = "UPDATE " . $this->_table . " SET user=" . $this->user . ' comment="' . $this->comment . '" WHERE id=' . $this->id;
             return $this->query($sql);
@@ -37,7 +37,7 @@ class Account extends Model {
         }
     }
 
-    function search() {
+    function find() {
         if ($this->id) {
             if (!$this->user && !$this->comment) {
                 $sql = "SELECT user, comment FROM " . $this->_table . " WHERE id=" . $this->id;
@@ -80,6 +80,23 @@ class Account extends Model {
         }
     }
 
+    function search() {
+        $sql = "SELECT id, user, comment FROM " . $this->_table
+        if ($this->id || $this->user || $this->comment) {
+            $sql = $sql . " WHERE "
+            if ($this->id) {
+                $sql = $sql . "id=" . $this->id . " ";
+            }
+            if ($this->user) {
+                $sql = $sql . "user=" . $this->user . " ";
+            }
+            if ($this->comment) {
+                $sql = $sql . "comment=" . $this->comment;
+            }
+        }
+        return $this->query($sql);
+    }
+
     function initTable() {
         $sql = "CREATE TABLE " . $this->_table . " (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -87,5 +104,13 @@ class Account extends Model {
         comment VARCHAR(50) NOT NULL
         )";
         return $this->query($sql);
+    }
+
+    function getUser() {
+        return $this->user;
+    }
+
+    function getComment() {
+        return $this->comment();
     }
 }
