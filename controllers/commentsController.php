@@ -17,12 +17,7 @@ class CommentsController {
     }
 
     function deleteComment($id) {
-        if ($_SESSION["user"]) {
-            $comment = new Comment(NULL, NULL, NULL, NULL, $id);
-            return $comment.delete();
-        }
-        else {
-            return -1;
-        }
+        $comment = new Comment(NULL, NULL, NULL, NULL, $id);
+        return $comment.delete();
     }
 }
