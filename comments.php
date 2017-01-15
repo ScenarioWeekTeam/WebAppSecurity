@@ -113,6 +113,7 @@ if (!$_SESSION['username']) {
                     <th>Phone Number</th>
                     <th>Course</th>
                     <th>Comment</th>
+                    <th>Delete</th>
                 </tr>
 <?php
                 
@@ -132,7 +133,7 @@ $result = $comment->search();
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["name"]. "</td><td>" . $row["email"]. "</td><td>" . $row["phonenumber"] . "</td><td>" . $row["course"] . "</td><td>" . $row["comment"] . "</td></tr>";
+        echo "<tr><td>" . $row["name"]. "</td><td>" . $row["email"]. "</td><td>" . $row["phonenumber"] . "</td><td>" . $row["course"] . "</td><td>" . $row["comment"] . '</td><td><a href="actions/deleteComment.php"><i class="fa fa-trash" aria-hidden="true"></i></a></td></tr>';
     }
 }
 
