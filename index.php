@@ -62,13 +62,14 @@
                         <a href="feedback.php">Feedback</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="contactus.html">Contact Us</a>
+                        <a href="contactus.php">Contact Us</a>
                     </li>
                     <?php
                     
                     session_start();
 
                     if ($_SESSION['username']) {
+                        echo '<li class="page-scroll"><a href="comments.php">Comments</a></li>';
                         echo "<li class='page-scroll'><a href='actions/logout.php'>Logout</a></li>";
                     }
 
