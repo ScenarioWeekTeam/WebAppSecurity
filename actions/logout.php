@@ -1,4 +1,7 @@
 <?php
+
+$root = "../";
+
 require '../controllers/accountsController.php';
 
 $controller = new AccountController();
