@@ -167,9 +167,9 @@
                         
                         $token = random_bytes(64);
                         
-                        $_SESSION['CSRF-Feedback'] = $token
+                        $_SESSION['CSRF-Feedback'] = $token;
                             
-                        echo "<input type='hidden' name='CSRFToken' value='" . $token . "'>{$m[2]}</form>"
+                        echo "<input type='hidden' name='CSRFToken' value='" . $token . "'>{$m[2]}</form>";
                         
                         ?>
                         <br>
