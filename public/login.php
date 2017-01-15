@@ -125,7 +125,15 @@ if ($_GET['error']) {
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required>
       <br>
-     <input type="checkbox" checked="checked"> Remember me   
+                              <?php
+                        
+                        $token = random_bytes(64);
+                        
+                        $_SESSION['CSRF-Login'] = $token;
+                            
+                        echo "<input type='hidden' name='CSRFToken' value='" . $token . "'>";
+                        
+                        ?>
       <button type="submit">Login</button>
       <br>
   </div>
