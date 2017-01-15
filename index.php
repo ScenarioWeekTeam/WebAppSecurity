@@ -69,7 +69,7 @@
                     session_start();
 
                     if ($_SESSION['username']) {
-                        echo "<li class='page-scroll'><a href='actions/logout.php'>Logout</a></li>"
+                        echo "<li class='page-scroll'><a href='actions/logout.php'>Logout</a></li>";
                     }
 
                     ?>
@@ -89,7 +89,31 @@
     </nav>
     <br>
     <br>
+    <?php
     
+    if ($_GET['success']) {
+        if ($_GET['success'] === 'logout') {
+            echo '<div class="alert alert-success" role="alert">Logged out</div>';
+        }
+        else if ($_GET['success'] === 'login') {
+            echo '<div class="alert alert-success" role="alert">Logged in</div>';
+        }
+        else if ($_GET['success'] === 'add') {
+            echo '<div class="alert alert-success" role="alert">Thank you for providing feedback</div>';
+        }
+        else if ($_GET['success'] === 'delete') {
+            echo '<div class="alert alert-warning" role="alert">Comment deleted</div>';
+        }
+    }
+    
+    if ($_GET['error']) {
+        if ($_GET['error'] === 'delete') {
+            echo '<div class="alert alert-danger" role="alert">Error deleting comment</div>';
+        }
+    }
+    
+    
+    ?>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
