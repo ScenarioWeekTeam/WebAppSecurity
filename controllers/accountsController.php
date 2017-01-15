@@ -1,6 +1,6 @@
 <?php
 
-require '../models/account.php';
+require $root . 'models/account.php';
 
 class AccountsController {
     function __construct() {
