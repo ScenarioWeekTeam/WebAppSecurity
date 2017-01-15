@@ -104,6 +104,14 @@ span.psw {
 <img src="img/ucllogo.png" width=100%>
 <h2 align="center">Admin Login for UCL CS Feedback</h2>
 
+<?php
+    
+if ($_GET['error']) {
+    echo "<div class="alert alert-danger" role="alert">Incorrect username or password. Please try again.</div>"
+}
+    
+?>
+    
 <form action="actions/login.php" method="post" >
     
       <div class="imgcontainer">
