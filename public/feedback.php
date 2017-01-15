@@ -163,6 +163,15 @@
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
+                        <?php
+                        
+                        $token = random_bytes(64);
+                        
+                        $_SESSION['CSRF-Feedback'] = $token
+                            
+                        echo "<input type='hidden' name='CSRFToken' value='" . $token . "'>{$m[2]}</form>"
+                        
+                        ?>
                         <br>
                         <div id="success"></div>
                         <div class="row">
