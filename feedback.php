@@ -55,14 +55,23 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="index.html">UCL CS</a>
+                        <a href="index.php">UCL CS</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="feedback.html">Feedback</a>
+                        <a href="feedback.php">Feedback</a>
                     </li>
                     <li class="page-scroll">
                         <a href="contactus.html">Contact Us</a>
                     </li>
+                    <?php
+                    
+                    session_start();
+
+                    if ($_SESSION['username']) {
+                        echo "<li class='page-scroll'><a href='actions/logout.php'>Logout</a></li>";
+                    }
+
+                    ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -76,7 +85,13 @@
     </nav>
     <br>
     <br>
-
+    <?php
+    
+    if ($_GET['error']) {
+        if ($_GET['error'] === 'add') {
+            echo '<div class="alert alert-danger" role="alert">Error sending feedback</div>';
+        }
+    ?>
             <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
