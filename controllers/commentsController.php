@@ -17,7 +17,23 @@ class CommentsController {
     }
 
     function deleteComment($id) {
-        $comment = new Comment(NULL, NULL, NULL, NULL, NULL, $id);
-        return $comment->delete();
+        if ($_SESSION['username'] && $id) {
+            if ($_SESSION['username'] === 'Admin') {
+                $comment = new Comment(NULL, NULL, NULL, NULL, NULL, $id);
+                return $comment->delete();
+            }
+            else {
+                $comment = new Comment(NULL, NULL, NULL, $_SESSION['username'], NULL, $id);
+                $result = $comment.search();
+                if ($result->num_rows === 1) {
+                    return $comment->delete();
+                }
+                else {
+                    return -1;
+                }
+            }
+        else {
+            return -1;
+        }
     }
 }
