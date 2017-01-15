@@ -131,7 +131,11 @@ $result = $comment->search();
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo "<tr><td>" . $row["name"]. "</td><td>" . $row["email"]. "</td><td>" . $row["phonenumber"] . "</td><td>" . $row["course"] . "</td><td>" . $row["comment"] . '</td><td><a href="actions/deleteComment.php?id=' . $row['id'] . '"><i class="fa fa-trash" aria-hidden="true"></i></a></td></tr>';
+        $token = random_bytes(64);
+                        
+        $_SESSION['CSRF-Delete-' . $row["id"]] = $token;
+                            
+        echo "<tr><td>" . $row["name"]. "</td><td>" . $row["email"]. "</td><td>" . $row["phonenumber"] . "</td><td>" . $row["course"] . "</td><td>" . $row["comment"] . '</td><td><a href="actions/deleteComment.php?id=' . $row['id'] . '&csrf=' . $token . '"><i class="fa fa-trash" aria-hidden="true"></i></a></td></tr>';
     }
 }
 
