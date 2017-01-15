@@ -26,7 +26,7 @@ class Comment extends Model {
    
     function delete() {
         if ($this->id) {
-            $sql = "DELETE FROM " . $this->_table . " WHERE id=" . $this->id;
+            $sql = "DELETE FROM " . $this->_table . " WHERE id='" . $this->id . "'";
             return $this->query($sql);
         }
         else {

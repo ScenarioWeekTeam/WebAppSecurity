@@ -18,6 +18,6 @@ class CommentsController {
 
     function deleteComment($id) {
         $comment = new Comment(NULL, NULL, NULL, NULL, NULL, $id);
-        return $comment.delete();
+        return $comment->delete();
     }
 }
