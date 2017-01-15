@@ -151,13 +151,6 @@
         </div>
     <br>
     <br>
-    <div class="container">
-        <div class="col-lg-8 col-lg-offset-2">
-            <div class="form-group col-xs-12" align="center">
-                <button type="submit" class="btn btn-success btn-lg" ><a href="login.php" style="text-decoration:none;color: inherit">Admin Login</a></button>
-            </div>
-        </div>
-    </div>
     <br>
     <br>
 
@@ -171,24 +164,7 @@
                         <p>Gower St <br> Kings Cross<br>London WC1E 6BT</p>
                     </div>
                     <div class="footer-col col-md-4">
-                        <h3>Around the Web</h3>
-                        <ul class="list-inline">
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
-                            </li>
-                        </ul>
+                        <a href="login.php">Admin login</a>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>About the Creators</h3>
