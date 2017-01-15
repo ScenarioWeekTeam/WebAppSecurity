@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if ($_SESSION['username']) {
+    header("Location: /index.html?error=alreadyloggedin");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
