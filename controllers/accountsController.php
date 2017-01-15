@@ -2,7 +2,7 @@
 
 require $root . 'models/account.php';
 
-class AccountsController {
+class AccountController {
     function __construct() {
         session_start();
     }
@@ -13,9 +13,12 @@ class AccountsController {
 
     function login($username, $password) {
         $account = new Account($username, $password, NULL);
-        if ($account->find() != -1) {
-            $_SESSION['user'] = $account->getId();
-            $_SESSION['username'] = $username;
+        $results = $account->search();
+        if ($results->num_rows === 1) {
+            $row = $results->fetch_assoc();
+            $_SESSION['user'] = $row['id'];
+            $_SESSION['username'] = $row['username'];
+            return;
         }
         else {
             return -1;

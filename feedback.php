@@ -91,6 +91,8 @@
         if ($_GET['error'] === 'add') {
             echo '<div class="alert alert-danger" role="alert">Error sending feedback</div>';
         }
+    }
+
     ?>
             <div class="container">
             <div class="row">
