@@ -56,7 +56,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="index.html">Home</a>
+                        <a href="index.php">Home</a>
                     </li>
                     <li class="page-scroll">
                         <a href="feedback.php">Feedback</a>
