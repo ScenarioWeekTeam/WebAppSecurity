@@ -36,13 +36,19 @@ class Account extends Model {
         if ($this->id || $this->username || $this->password) {
             $sql = $sql . " WHERE ";
             if ($this->id) {
-                $sql = $sql . "id=" . $this->id . " ";
+                $sql = $sql . "id='" . $this->id . "' ";
+                if ($this->username || $this->password) {
+                    $sql = $sql . "AND ";
+                }
             }
             if ($this->username) {
-                $sql = $sql . "username=" . $this->username . " ";
+                $sql = $sql . "username='" . $this->username . "' ";
+                if ($this->password) {
+                    $sql = $sql . "AND ";
+                }
             }
             if ($this->password) {
-                $sql = $sql . "password=" . $this->password;
+                $sql = $sql . "password='" . $this->password . "'";
             }
         }
         return $this->query($sql);

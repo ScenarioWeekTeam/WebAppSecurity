@@ -39,22 +39,37 @@ class Comment extends Model {
         if ($this->id || $this->name || $this->email || $this->phonenumber || $this->course || $this->comment) {
             $sql = $sql . " WHERE ";
             if ($this->id) {
-                $sql = $sql . "id=" . $this->id . " ";
+                $sql = $sql . "id='" . $this->id . "' ";
+                if ($this->name || $this->email || $this->phonenumber || $this->course || $this->comment) {
+                    $sql = $sql . "AND ";
+                }
             }
             if ($this->name) {
-                $sql = $sql . "name=" . $this->name . " ";
+                $sql = $sql . "name='" . $this->name . "' ";
+                if ($this->email || $this->phonenumber || $this->course || $this->comment) {
+                    $sql = $sql . "AND ";
+                }
             }
             if ($this->email) {
-                $sql = $sql . "email=" . $this->email . " ";
+                $sql = $sql . "email='" . $this->email . "' ";
+                if ($this->phonenumber || $this->course || $this->comment) {
+                    $sql = $sql . "AND ";
+                }
             }
             if ($this->phonenumber) {
-                $sql = $sql . "phonenumber=" . $this->phonenumber . " ";
+                $sql = $sql . "phonenumber='" . $this->phonenumber . "' ";
+                if ($this->course || $this->comment) {
+                    $sql = $sql . "AND ";
+                }
             }
             if ($this->course) {
-                $sql = $sql . "course=" . $this->course . " ";
+                $sql = $sql . "course='" . $this->course . "' ";
+                if ($this->comment) {
+                    $sql = $sql . "AND ";
+                }
             }
             if ($this->comment) {
-                $sql = $sql . "comment=" . $this->comment;
+                $sql = $sql . "comment='" . $this->comment ."'";
             }
         }
         return $this->query($sql);

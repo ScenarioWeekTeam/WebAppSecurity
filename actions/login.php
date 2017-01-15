@@ -7,6 +7,7 @@ require '../controllers/accountsController.php';
 $controller = new AccountController();
 
 $login = $controller->login($_POST["username"], $_POST["password"]);
+error_log("Login attempt: " . $_POST["username"] . " " . $_POST["password"]);
 
 if ($login != -1) {
     if ($_GET['redirect']) {
