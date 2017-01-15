@@ -13,7 +13,7 @@ if ($login != -1) {
         header("Location: " . $_GET['redirect']);
     }
     else {
-        header("Location: /index.html?success=login");
+        header("Location: /index.php?success=login");
     }
 }
 else {
