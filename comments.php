@@ -115,11 +115,19 @@ if (!$_SESSION['username']) {
                     <th>Comment</th>
                 </tr>
 <?php
+                
+start_session();
+                
 $root = "";
 require 'models/comment.php';
 
-$comment = new Comment(NULL, NULL, NULL, NULL, NULL, NULL);
-
+if ($_SESSION['username'] === 'Admin') {
+    $comment = new Comment(NULL, NULL, NULL, NULL, NULL, NULL);
+}
+else {
+    $comment = new Comment(NULL, NULL, NULL, $_SESSION['username'], NULL, NULL);
+}
+                
 $result = $comment->search();
 
 if ($result->num_rows > 0) {
