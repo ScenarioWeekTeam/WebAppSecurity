@@ -6,8 +6,8 @@ require '../controllers/commentsController.php';
 
 $controller = new CommentsController();
 
-if ($_GET['csrf'] === $_SESSION['CSRF-Delete']) {
-    $_SESSION['CSRF-Delete'] = NULL;
+if ($_GET['csrf'] === $_SESSION['CSRF-Delete-' . $_GET["id"]]) {
+    $_SESSION['CSRF-Delete-' . $_GET["id"]] = NULL;
     $comment = $controller->deleteComment(htmlspecialchars($_GET["id"]));
 
     if ($comment === -1) {
