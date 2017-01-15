@@ -164,7 +164,6 @@
                         <p>Gower St <br> Kings Cross<br>London WC1E 6BT</p>
                     </div>
                     <div class="footer-col col-md-4">
-                        <a href="login.php">Admin login</a>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>About the Creators</h3>
@@ -177,7 +176,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; UCL Feedback 2017
+                        Copyright &copy; UCL Feedback 2017 <a href="login.php">Admin login</a>
                     </div>
                 </div>
             </div>
