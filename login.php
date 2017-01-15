@@ -107,7 +107,7 @@ span.psw {
 <?php
     
 if ($_GET['error']) {
-    echo "<div class="alert alert-danger" role="alert">Incorrect username or password. Please try again.</div>"
+    echo '<div class="alert alert-danger" role="alert">Incorrect username or password. Please try again.</div>';
 }
     
 ?>
