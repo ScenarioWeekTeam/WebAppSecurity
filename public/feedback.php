@@ -169,7 +169,7 @@
                         
                         $_SESSION['CSRF-Feedback'] = $token;
                             
-                        echo "<input type='hidden' name='CSRFToken' value='" . $token . "'>{$m[2]}</form>";
+                        echo "<input type='hidden' name='CSRFToken' value='" . $token . "'>";
                         
                         ?>
                         <br>
