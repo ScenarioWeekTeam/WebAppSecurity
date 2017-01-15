@@ -152,7 +152,7 @@
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Course</label>
-                                <input type="text" class="form-control" placeholder="Course" name="course" id="course" required data-validation-required-message="Please enter your course."><?php echo $_GET["course"]; ?></input>
+                                <input type="text" class="form-control" placeholder="Course" name="course" id="course" required data-validation-required-message="Please enter your course." value="<?php echo htmlspecialchars($_GET["course"]); ?>">
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
