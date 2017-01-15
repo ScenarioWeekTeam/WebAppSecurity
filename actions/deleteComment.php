@@ -1,4 +1,7 @@
 <?php
+
+$root = "../";
+
 require '../controllers/commentsController.php';
 
 $controller = new CommentsController();
