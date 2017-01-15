@@ -1,6 +1,6 @@
 <?php
 
 define('DB_SERVER', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', 'root');
-define('DB_DATABASE', 'vulnerable');
+define('DB_USER', 'improved');
+define('DB_PASS', 'z3)JdOKEdqv4f7A;');
+define('DB_DATABASE', 'webapp');
